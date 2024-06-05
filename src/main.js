@@ -1,5 +1,9 @@
-import { sum } from "./sum.js";
+import QRCode from 'qrcode';
+// import { channels } from './channels';
 
-console.log("sum is ", sum(10, 20));
-console.log("This is main.js.");
-console.log("You should probably use `yarn test` or `yarn test --watchAll`");
+const generateQR = async text => {
+  
+     await QRCode.toFile('outputImages/text.png', text)
+  }
+
+  generateQR("https://www.youtube.com/@codeorg");
