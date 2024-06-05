@@ -1,9 +1,12 @@
 import QRCode from 'qrcode';
-// import { channels } from './channels';
+import { channels } from './channels.js';
 
-const generateQR = async text => {
+const generateQR = async channelList => {
+   for (let channel of channelList) {
+      await QRCode.toFile(`outputImages/${channel.channelName}.png`, channel.url)
+
+   }
   
-     await QRCode.toFile('outputImages/text.png', text)
   }
 
-  generateQR("https://www.youtube.com/@codeorg");
+  generateQR(channels);
